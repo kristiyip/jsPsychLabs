@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
-import LabNames from './LabNames';
+import LabNames from './experiments/LabNames';
 
 export default class Labs extends React.Component {
 	render() {
