@@ -1,1 +1,0 @@
-#IAT(Implicit Association Test)

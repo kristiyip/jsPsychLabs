@@ -1,23 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
-import LabNames from './experiments/LabNames';
+import LabNames from './docs/LabNames';
 import LabPages from './LabPages';
 
-const routes = [
-  { path: '/',
-    exact: true,
-    main: () => <h2>Home</h2>
-  },
-  { path: '/IAT',
-    main: () => <h2>IAT(Implicit Association Test)</h2>
-  },
-  { path: '/Flanker',
-    main: () => <h2>Flanker</h2>
-  }
-]
+const paths = {
+	experiments: match => `${match.path}/listOfLabs/:mod`
+}
 
 export default class SideBar extends React.Component {
 	render() {
+		const { data, match } = this.props;
 		return(
 			<BrowserRouter>
 				<div style={{ display: 'flex' }}>
@@ -36,7 +28,7 @@ export default class SideBar extends React.Component {
 			    	}
 			      </ul>
 			      </div>
-			      <Route path="/LabList/:name" component={LabPages} />
+			      <Route path='/LabList/:name' component={LabPages} />
 			    </div>
 			</BrowserRouter>
 		)
