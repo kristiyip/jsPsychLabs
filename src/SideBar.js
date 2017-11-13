@@ -15,20 +15,22 @@ export default class SideBar extends React.Component {
 				<div style={{ display: 'flex' }}>
 			      <div style={{
 			        padding: '10px',
-			        width: '20%',
+			        width: '150px',
+			        maxWidth: '150px',
+			        minWidth: '150px',
 			        background: '#f0f0f0'
 			      }}>
 			      <ul style={{ listStyleType: 'none', padding: 0 }}>
 			      {
 			        LabNames.all().map(lab => (
 							<li key={lab.index}>
-								<Link to={`/LabList/${lab.name}`}>{lab.name}</Link>
+								<Link to={`/LabList/${lab.path}`}>{lab.name}</Link>
 							</li>
 						))
 			    	}
 			      </ul>
 			      </div>
-			      <Route path='/LabList/:name' component={LabPages} />
+			      <Route path='/LabList/:path' component={LabPages} />
 			    </div>
 			</BrowserRouter>
 		)

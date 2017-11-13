@@ -1,21 +1,28 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { Block } from 'jsxstyle';
-// var ReactMarkdown = require('react-markdown');
-
-// var input = '# This is a header\n\nAnd this is a paragraph';
-// var input2 = require('./docs/IAT/iat.md');
-// var fileArray = input2.split('\n');
-// console.log(fileArray);
 import marked from "marked";
+import __ from 'lodash';
+import $ from 'jquery';
 
-// const LabPages = ({ match }) => (
-// 	<div>
-// 	{match.params.name}
-// 	</div>
-// )
+// var app = express();
+// var path = require('path');
+//xconst __dirname = "./docs/jsPsych/examples";
 
-// export default LabPages;
+//app.use("/docs", express.static(__dirname + "/demo-flanker.html"));
+// const handleClick = () => {
+// 		app.get('/', function(req, res) {
+//     	res.sendFile(path.join(__dirname + '/demo-flanker.html'));
+// });
+
+// app.listen(3000);
+// console.log("running at port 3000");
+// 	}
+
+const handleClick = () => {
+     $("#root").load("demo-flanker.html");
+}
+
 export default class LabPages extends React.Component{
 	constructor(props) {
 		super(props);
@@ -23,7 +30,7 @@ export default class LabPages extends React.Component{
 	}
 
 	componentWillMount() {
-		const readmePath = require("./docs/IAT/iat.md");
+		const readmePath = require("./docs/iat.md");
 
 		fetch(readmePath)
 		.then(response => {
@@ -36,13 +43,33 @@ export default class LabPages extends React.Component{
 		});
 	}
 
-	render() {
-		const { markdown } = this.state;
 
+	componentWillReceiveProps(nextProps) {
+		const readmePath = require("./docs/"+nextProps.match.params.path+".md");
+
+		fetch(readmePath)
+		.then(response => {
+			return response.text()
+		})
+		.then(text => {
+			this.setState({
+				markdown: marked(text)
+			})
+		});
+	}
+
+	componentWillUnmount(){
+      this.setState({markdown: ""})
+  }
+
+	render() {
 		return (
+			<div>
 			<section>
-			<article dangerouslySetInnerHTML={{__html: markdown}}></article>
+			<article dangerouslySetInnerHTML={{__html: this.state.markdown}}></article>
 			</section>
+			<button onClick={handleClick}>Start Experiment</button>
+			</div>
 			)
 	}
 }
