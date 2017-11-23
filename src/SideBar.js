@@ -3,9 +3,9 @@ import { BrowserRouter, Link, Route } from 'react-router-dom';
 import LabNames from './docs/LabNames';
 import LabPages from './LabPages';
 
-const paths = {
-	experiments: match => `${match.path}/listOfLabs/:mod`
-}
+// const paths = {
+// 	experiments: match => `${match.path}/listOfLabs/:mod`
+// }
 
 export default class SideBar extends React.Component {
 	render() {

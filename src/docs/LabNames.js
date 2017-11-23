@@ -2,8 +2,8 @@ import React from 'react';
 
 const LabNames = {
 	labNames: [
-	{path: 'iat', index: 1, name: "IAT", filePath: "./docs/IAT/iat.md"},
-	{path: 'flanker', index: 2, name: "Flanker", filePath: "./docs/IAT/flanker.md"}
+	{path: 'iat', index: 1, name: "IAT", exPath: "iatExperiment"},
+	{path: 'flanker', index: 2, name: "Flanker", exPath: "flankerExperiment"}
 	],
 	all: function() {return this.labNames}
 }

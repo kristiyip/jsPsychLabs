@@ -1,0 +1,10 @@
+{
+	"js":
+	["../jsPsych/jspsych.js","../jsPsych/plugins/jspsych-iat-image.js",
+	"../jsPsych/plugins/jspsych-iat-html.js",
+	"../jsPsych/plugins/jspsych-html-keyboard-response.js"],
+	"css":
+	["../jsPsych/css/jspsych.css"],
+	"expCode":
+	["var timeline = []; var welcome_block = {type: 'html-keyboard-response',stimulus: '<p>Welcome to the Age Task. In this study you will ' +'complete an Implicit Association Test (IAT) in which you ' +'will be asked to sort pictures and words into groups as ' +'fast as you can.</p><p>Press any key to begin.</p>',post_trial_gap: 1500};timeline.push(welcome_block);jsPsych.init({timeline: timeline});"]
+}
