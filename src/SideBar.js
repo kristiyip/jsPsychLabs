@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
-import LabNames from './docs/LabNames';
+import LabNames from './LabNames';
 import LabPages from './LabPages';
 
 // const paths = {
