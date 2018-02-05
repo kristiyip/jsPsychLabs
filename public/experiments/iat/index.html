@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IAT Example</title>
+  <script src="../../jsPsych/jspsych.js"></script>
+  <script src="../../jsPsych/plugins/jspsych-iat-image.js"></script>
+  <script src="../../jsPsych/plugins/jspsych-iat-html.js"></script>
+  <script src="../../jsPsych/plugins/jspsych-html-keyboard-response.js"></script>
+  <link href="../../jsPsych/css/jspsych.css" rel="stylesheet"></link>
+</head>
+<body>
+  Here is the body
+</body>
+<script>
+
 var welcome_block = {
   type: 'html-keyboard-response',
   stimulus: '<p>Welcome to the Age Task. In this study you will ' +
@@ -487,8 +502,11 @@ var trial_block7 = {
   timeline.push(debrief_block);
 
   jsPsych.init({
+    display_element: "preview",
     timeline: timeline,
     on_finish: function() {
       jsPsych.data.displayData();
     }
   });
+  </script>
+  </html>

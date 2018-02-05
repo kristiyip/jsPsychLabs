@@ -15,14 +15,16 @@ export default class LabPages extends React.Component{
 	}
 
 	componentWillMount() {
-		const readmePath = "/experiment/iat/iat.md";
+		const readmePath = '/experiments/iat/iat.md';
 
 		fetch(readmePath)
 		.then(response => {
 			//console.log(response.headers.get('Content-Type'));
+			console.log(response);
 			return response.text()
 		})
 		.then(text => {
+			console.log(text);
 			this.setState({
 				markdown: marked(text)
 			})
@@ -31,7 +33,7 @@ export default class LabPages extends React.Component{
 
 
 	componentWillReceiveProps(nextProps) {
-		const readmePath = "/experiment/"+nextProps.match.params.path+"/"+nextProps.match.params.path+".md";
+		const readmePath = "/experiments/"+nextProps.match.params.path+"/"+nextProps.match.params.path+".md";
 		console.log(readmePath)
 		fetch(readmePath)
 		.then(response => {

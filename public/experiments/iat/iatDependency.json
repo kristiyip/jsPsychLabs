@@ -1,7 +1,0 @@
-{
-	"js":
-	["../../jsPsych/jspsych.js",
-	"../jsPsych/plugins/jspsych-iat-image.js",
-	"../../jsPsych/plugins/jspsych-iat-html.js",
-	"../../jsPsych/plugins/jspsych-html-keyboard-response.js"]
-}
