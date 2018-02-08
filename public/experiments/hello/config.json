@@ -1,0 +1,10 @@
+{
+	"plugins": [
+		"/jsPsych/jspsych.js",
+		"/jsPsych/plugins/jspsych-html-keyboard-response.js",
+		"/experiments/hello/experiment.js"
+	],
+	"styling": [
+		"/jsPsych/css/jspsych.css"
+	]
+}
