@@ -22,18 +22,19 @@ export default class ExperimentPreview extends React.Component {
 			document.body.appendChild(link);
 		});
 	}
+
+	componentWillUnmount() {
+		
+	}
 	
 	render() {
-		console.log("in experiment preview");
 		return(
-			<div>
 				<div style={{width: '90vw', height: '90vh'}}>
 					<Paper elevation={6}>
 						<div id="preview">
 						</div>
 					</Paper>
 				</div>
-			</div>
 		)
 	}
 }
