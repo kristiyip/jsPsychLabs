@@ -18,9 +18,7 @@ export default class Home extends React.Component {
 			  			}
 			   		</ul>
 				</div>
-				<Switch>
-					<Route path='/LabList/:path' component={LabPages} />
-				</Switch>
+				<Route path='/LabList/:path' component={LabPages} />
 			</div>
 		)
 	}

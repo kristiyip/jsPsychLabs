@@ -18,7 +18,7 @@ class App extends Component {
           </header>
           <Switch>
             <Route exact path="/LabList" component={Home} />
-            <Route path="/LabList/:path" component={LabPages} />
+            <Route exact path="/LabList/:path" component={LabPages} />
             <Route path="/LabList/:path/start" component={ExperimentPreview} />
           </Switch>
         </div>

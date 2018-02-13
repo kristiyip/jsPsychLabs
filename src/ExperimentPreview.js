@@ -29,12 +29,12 @@ export default class ExperimentPreview extends React.Component {
 	
 	render() {
 		return(
-				<div style={{width: '90vw', height: '90vh'}}>
-					<Paper elevation={6}>
-						<div id="preview">
-						</div>
-					</Paper>
-				</div>
+			<div id="experimentContainer" style={{width: '90vw', height: '90vh'}}>
+				<Paper elevation={6}>
+					<div id="preview">
+					</div>
+				</Paper>
+			</div>
 		)
 	}
 }

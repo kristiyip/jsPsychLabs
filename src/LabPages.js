@@ -46,7 +46,7 @@ export default class LabPages extends React.Component{
 
 
 	render() {
-		const newPath = ""+this.props.match.url+"/start";
+		const newPath = this.props.match.url+"/start";
 		
 		return (
 			<div>
