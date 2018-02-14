@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>IAT Example</title>
-  <script src="../../jsPsych/jspsych.js"></script>
-  <script src="../../jsPsych/plugins/jspsych-iat-image.js"></script>
-  <script src="../../jsPsych/plugins/jspsych-iat-html.js"></script>
-  <script src="../../jsPsych/plugins/jspsych-html-keyboard-response.js"></script>
-  <link href="../../jsPsych/css/jspsych.css" rel="stylesheet"></link>
-</head>
-<body>
-  Here is the body
-</body>
-<script>
-
 var welcome_block = {
   type: 'html-keyboard-response',
   stimulus: '<p>Welcome to the Age Task. In this study you will ' +
@@ -29,13 +14,13 @@ var category_block = {
   '<strong>Good</strong>:<br>' + 'Fabulous, Excitement, Glorious, Cheerful, Cherish, ' +
   'Enjoy, Delightful, Joyous<br><br>' + '<strong>Bad</strong>:<br>' + 'Humiliate, ' +
   'Evil, Grief, Yucky, Detest, Poison, Abuse, Despise<br><br>' +
-  '<strong>Old</strong>:<br>' + "<img src='img/age/of1.jpg'></img>  " +
-  "<img src='img/age/of2.jpg'></img>  " + "<img src='img/age/of3.jpg'></img>  " +
-  "<img src='img/age/om1.jpg'></img>  " + "<img src='img/age/om2.jpg'></img>  " +
-  "<img src='img/age/om3.jpg'></img><br><br>" + '<strong>Young</strong>:<br>' +
-  "<img src='img/age/yf1.jpg'></img>  " + "<img src='img/age/yf4.jpg'></img>  " +
-  "<img src='img/age/yf5.jpg'></img>  " + "<img src='img/age/ym2.jpg'></img>  " +
-  "<img src='img/age/ym3.jpg'></img>  " + "<img src='img/age/ym5.jpg'></img><br><br>" +
+  '<strong>Old</strong>:<br>' + "<img src='/jsPsych/examples/img/age/of1.jpg'></img>  " +
+  "<img src='/jsPsych/examples/img/age/of2.jpg'></img>  " + "<img src='/jsPsych/examples/img/age/of3.jpg'></img>  " +
+  "<img src='/jsPsych/examples/img/age/om1.jpg'></img>  " + "<img src='/jsPsych/examples/img/age/om2.jpg'></img>  " +
+  "<img src='/jsPsych/examples/img/age/om3.jpg'></img><br><br>" + '<strong>Young</strong>:<br>' +
+  "<img src='/jsPsych/examples/img/age/yf1.jpg'></img>  " + "<img src='/jsPsych/examples/img/age/yf4.jpg'></img>  " +
+  "<img src='/jsPsych/examples/img/age/yf5.jpg'></img>  " + "<img src='/jsPsych/examples/img/age/ym2.jpg'></img>  " +
+  "<img src='/jsPsych/examples/img/age/ym3.jpg'></img>  " + "<img src='/jsPsych/examples/img/age/ym5.jpg'></img><br><br>" +
   "Press any key to continue.</p>",
   post_trial_gap: 1500
 };
@@ -73,18 +58,18 @@ var trial_block = {
     }
   ],
   timeline_variables: [
-    {stimulus: "img/age/of1.jpg", stim_key_association: "left"},
-    {stimulus: "img/age/of2.jpg", stim_key_association: "left"},
-    {stimulus: "img/age/of3.jpg", stim_key_association: "left"},
-    {stimulus: "img/age/om1.jpg", stim_key_association: "left"},
-    {stimulus: "img/age/om2.jpg", stim_key_association: "left"},
-    {stimulus: "img/age/om3.jpg", stim_key_association: "left"},
-    {stimulus: "img/age/yf1.jpg", stim_key_association: "right"},
-    {stimulus: "img/age/yf4.jpg", stim_key_association: "right"},
-    {stimulus: "img/age/yf5.jpg", stim_key_association: "right"},
-    {stimulus: "img/age/ym2.jpg", stim_key_association: "right"},
-    {stimulus: "img/age/ym3.jpg", stim_key_association: "right"},
-    {stimulus: "img/age/ym5.jpg", stim_key_association: "right"}
+    {stimulus: "/jsPsych/examples/img/age/of1.jpg", stim_key_association: "left"},
+    {stimulus: "/jsPsych/examples/img/age/of2.jpg", stim_key_association: "left"},
+    {stimulus: "/jsPsych/examples/img/age/of3.jpg", stim_key_association: "left"},
+    {stimulus: "/jsPsych/examples/img/age/om1.jpg", stim_key_association: "left"},
+    {stimulus: "/jsPsych/examples/img/age/om2.jpg", stim_key_association: "left"},
+    {stimulus: "/jsPsych/examples/img/age/om3.jpg", stim_key_association: "left"},
+    {stimulus: "/jsPsych/examples/img/age/yf1.jpg", stim_key_association: "right"},
+    {stimulus: "/jsPsych/examples/img/age/yf4.jpg", stim_key_association: "right"},
+    {stimulus: "/jsPsych/examples/img/age/yf5.jpg", stim_key_association: "right"},
+    {stimulus: "/jsPsych/examples/img/age/ym2.jpg", stim_key_association: "right"},
+    {stimulus: "/jsPsych/examples/img/age/ym3.jpg", stim_key_association: "right"},
+    {stimulus: "/jsPsych/examples/img/age/ym5.jpg", stim_key_association: "right"}
   ],
   randomize_order: true,
   repetitions: 2
@@ -177,18 +162,18 @@ var trial_block3 = {
     }
   ],
   timeline_variables: [
-    {type: 'iat-image', stimulus: "img/age/of1.jpg", stim_key_association: "left"},
-    {type: 'iat-image', stimulus: "img/age/of2.jpg", stim_key_association: "left"},
-    {type: 'iat-image', stimulus: "img/age/of3.jpg", stim_key_association: "left"},
-    {type: 'iat-image', stimulus: "img/age/om1.jpg", stim_key_association: "left"},
-    {type: 'iat-image', stimulus: "img/age/om2.jpg", stim_key_association: "left"},
-    {type: 'iat-image', stimulus: "img/age/om3.jpg", stim_key_association: "left"},
-    {type: 'iat-image', stimulus: "img/age/yf1.jpg", stim_key_association: "right"},
-    {type: 'iat-image', stimulus: "img/age/yf4.jpg", stim_key_association: "right"},
-    {type: 'iat-image', stimulus: "img/age/yf5.jpg", stim_key_association: "right"},
-    {type: 'iat-image', stimulus: "img/age/ym2.jpg", stim_key_association: "right"},
-    {type: 'iat-image', stimulus: "img/age/ym3.jpg", stim_key_association: "right"},
-    {type: 'iat-image', stimulus: "img/age/ym5.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/of1.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/of2.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/of3.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/om1.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/om2.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/om3.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/yf1.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/yf4.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/yf5.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/ym2.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/ym3.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/ym5.jpg", stim_key_association: "right"},
     {type: 'iat-html', stimulus: "Humiliate", stim_key_association: "left"},
     {type: 'iat-html', stimulus: "Evil", stim_key_association: "left"},
     {type: 'iat-html', stimulus: "Grief", stim_key_association: "left"},
@@ -244,18 +229,18 @@ var trial_block4 = {
       }
     ],
     timeline_variables: [
-      {type: 'iat-image', stimulus: "img/age/of1.jpg", stim_key_association: "left"},
-      {type: 'iat-image', stimulus: "img/age/of2.jpg", stim_key_association: "left"},
-      {type: 'iat-image', stimulus: "img/age/of3.jpg", stim_key_association: "left"},
-      {type: 'iat-image', stimulus: "img/age/om1.jpg", stim_key_association: "left"},
-      {type: 'iat-image', stimulus: "img/age/om2.jpg", stim_key_association: "left"},
-      {type: 'iat-image', stimulus: "img/age/om3.jpg", stim_key_association: "left"},
-      {type: 'iat-image', stimulus: "img/age/yf1.jpg", stim_key_association: "right"},
-      {type: 'iat-image', stimulus: "img/age/yf4.jpg", stim_key_association: "right"},
-      {type: 'iat-image', stimulus: "img/age/yf5.jpg", stim_key_association: "right"},
-      {type: 'iat-image', stimulus: "img/age/ym2.jpg", stim_key_association: "right"},
-      {type: 'iat-image', stimulus: "img/age/ym3.jpg", stim_key_association: "right"},
-      {type: 'iat-image', stimulus: "img/age/ym5.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/of1.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/of2.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/of3.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/om1.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/om2.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/om3.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/yf1.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/yf4.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/yf5.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/ym2.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/ym3.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/ym5.jpg", stim_key_association: "right"},
       {type: 'iat-html', stimulus: "Humiliate", stim_key_association: "left"},
       {type: 'iat-html', stimulus: "Evil", stim_key_association: "left"},
       {type: 'iat-html', stimulus: "Grief", stim_key_association: "left"},
@@ -309,18 +294,18 @@ var trial_block4 = {
       }
     ],
     timeline_variables: [
-      {type: 'iat-image', stimulus: "img/age/of1.jpg", stim_key_association: "right"},
-      {type: 'iat-image', stimulus: "img/age/of2.jpg", stim_key_association: "right"},
-      {type: 'iat-image', stimulus: "img/age/of3.jpg", stim_key_association: "right"},
-      {type: 'iat-image', stimulus: "img/age/om1.jpg", stim_key_association: "right"},
-      {type: 'iat-image', stimulus: "img/age/om2.jpg", stim_key_association: "right"},
-      {type: 'iat-image', stimulus: "img/age/om3.jpg", stim_key_association: "right"},
-      {type: 'iat-image', stimulus: "img/age/yf1.jpg", stim_key_association: "left"},
-      {type: 'iat-image', stimulus: "img/age/yf4.jpg", stim_key_association: "left"},
-      {type: 'iat-image', stimulus: "img/age/yf5.jpg", stim_key_association: "left"},
-      {type: 'iat-image', stimulus: "img/age/ym2.jpg", stim_key_association: "left"},
-      {type: 'iat-image', stimulus: "img/age/ym3.jpg", stim_key_association: "left"},
-      {type: 'iat-image', stimulus: "img/age/ym5.jpg", stim_key_association: "left"}
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/of1.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/of2.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/of3.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/om1.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/om2.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/om3.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/yf1.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/yf4.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/yf5.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/ym2.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/ym3.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/ym5.jpg", stim_key_association: "left"}
     ],
     randomize_order: true,
     repetitions: 2
@@ -358,18 +343,18 @@ var trial_block4 = {
     }
     ],
     timeline_variables: [
-      {type: 'iat-image', stimulus: "img/age/of1.jpg", stim_key_association: "right"},
-      {type: 'iat-image', stimulus: "img/age/of2.jpg", stim_key_association: "right"},
-      {type: 'iat-image', stimulus: "img/age/of3.jpg", stim_key_association: "right"},
-      {type: 'iat-image', stimulus: "img/age/om1.jpg", stim_key_association: "right"},
-      {type: 'iat-image', stimulus: "img/age/om2.jpg", stim_key_association: "right"},
-      {type: 'iat-image', stimulus: "img/age/om3.jpg", stim_key_association: "right"},
-      {type: 'iat-image', stimulus: "img/age/yf1.jpg", stim_key_association: "left"},
-      {type: 'iat-image', stimulus: "img/age/yf4.jpg", stim_key_association: "left"},
-      {type: 'iat-image', stimulus: "img/age/yf5.jpg", stim_key_association: "left"},
-      {type: 'iat-image', stimulus: "img/age/ym2.jpg", stim_key_association: "left"},
-      {type: 'iat-image', stimulus: "img/age/ym3.jpg", stim_key_association: "left"},
-      {type: 'iat-image', stimulus: "img/age/ym5.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/of1.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/of2.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/of3.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/om1.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/om2.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/om3.jpg", stim_key_association: "right"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/yf1.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/yf4.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/yf5.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/ym2.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/ym3.jpg", stim_key_association: "left"},
+      {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/ym5.jpg", stim_key_association: "left"},
       {type: 'iat-html', stimulus: "Humiliate", stim_key_association: "left"},
       {type: 'iat-html', stimulus: "Evil", stim_key_association: "left"},
       {type: 'iat-html', stimulus: "Grief", stim_key_association: "left"},
@@ -426,18 +411,18 @@ var trial_block7 = {
   }
   ],
   timeline_variables: [
-    {type: 'iat-image', stimulus: "img/age/of1.jpg", stim_key_association: "right"},
-    {type: 'iat-image', stimulus: "img/age/of2.jpg", stim_key_association: "right"},
-    {type: 'iat-image', stimulus: "img/age/of3.jpg", stim_key_association: "right"},
-    {type: 'iat-image', stimulus: "img/age/om1.jpg", stim_key_association: "right"},
-    {type: 'iat-image', stimulus: "img/age/om2.jpg", stim_key_association: "right"},
-    {type: 'iat-image', stimulus: "img/age/om3.jpg", stim_key_association: "right"},
-    {type: 'iat-image', stimulus: "img/age/yf1.jpg", stim_key_association: "left"},
-    {type: 'iat-image', stimulus: "img/age/yf4.jpg", stim_key_association: "left"},
-    {type: 'iat-image', stimulus: "img/age/yf5.jpg", stim_key_association: "left"},
-    {type: 'iat-image', stimulus: "img/age/ym2.jpg", stim_key_association: "left"},
-    {type: 'iat-image', stimulus: "img/age/ym3.jpg", stim_key_association: "left"},
-    {type: 'iat-image', stimulus: "img/age/ym5.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/of1.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/of2.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/of3.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/om1.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/om2.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/om3.jpg", stim_key_association: "right"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/yf1.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/yf4.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/yf5.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/ym2.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/ym3.jpg", stim_key_association: "left"},
+    {type: 'iat-image', stimulus: "/jsPsych/examples/img/age/ym5.jpg", stim_key_association: "left"},
     {type: 'iat-html', stimulus: "Humiliate", stim_key_association: "left"},
     {type: 'iat-html', stimulus: "Evil", stim_key_association: "left"},
     {type: 'iat-html', stimulus: "Grief", stim_key_association: "left"},
@@ -502,11 +487,9 @@ var trial_block7 = {
   timeline.push(debrief_block);
 
   jsPsych.init({
-    display_element: "preview",
+    display_element: 'preview',
     timeline: timeline,
     on_finish: function() {
       jsPsych.data.displayData();
     }
   });
-  </script>
-  </html>

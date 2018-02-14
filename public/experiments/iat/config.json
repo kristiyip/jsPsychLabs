@@ -1,0 +1,12 @@
+{
+	"plugins": [
+		"/jsPsych/jspsych.js",
+		"/jsPsych/plugins/jspsych-html-keyboard-response.js",
+		"/jsPsych/plugins/jspsych-iat-image.js",
+		"/jsPsych/plugins/jspsych-iat-html.js",
+		"/experiments/iat/iat.js"
+	],
+	"styling": [
+		"/jsPsych/css/jspsych.css"
+	]
+}

@@ -13,9 +13,6 @@ class App extends Component {
   render() {
     return (
         <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">jsPsych Labs</h1>
-          </header>
           <Switch>
             <Route exact path="/LabList" component={Home} />
             <Route exact path="/LabList/:path" component={LabPages} />
