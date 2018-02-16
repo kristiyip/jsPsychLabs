@@ -1,6 +1,7 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
 import Button from 'material-ui/Button';
+import { Link } from 'react-router-dom';
 
 const buttonStyle = {
 	left: '39.5%',
@@ -43,7 +44,7 @@ export default class ExperimentPreview extends React.Component {
 	render() {
 		return(
 			<div id="experimentContainer" style={{width: '100vw', height: '100vh', backgroundColor: '#ddd'}}>
-				<Button variant="raised" color="black" style={buttonStyle}>Back To Home</Button>
+				<Link to={'/LabList/'+this.props.match.params.path}><Button color="black" style={buttonStyle}>Back To Home</Button></Link>
 				<Paper elevation={6} style={{position: 'absolute', top: '5%', left: '5%', width: '90vw', height: '90vh'}}>
 					<div id="preview" style={{width: '90vw', height: '90vh'}}>
 					</div>
