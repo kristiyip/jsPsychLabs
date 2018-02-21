@@ -35,16 +35,17 @@ export default class ExperimentPreview extends React.Component {
 	}
 
 	componentWillUnmount() {
-		var toRemove = document.querySelector('.rendered-script');
-		for(var i=0; i<toRemove.length; i++){
-			toRemove[i].remove();
+		var toRemove = document.getElementsByClassName("rendered-script");
+		console.log("removing scripts" + toRemove);
+		while(toRemove.length > 0) {
+			toRemove[0].parentNode.removeChild(toRemove[0]);
 		}
 	}
 	
 	render() {
 		return(
 			<div id="experimentContainer" style={{width: '100vw', height: '100vh', backgroundColor: '#ddd'}}>
-				<Link to={'/LabList/'+this.props.match.params.path}><Button color="black" style={buttonStyle}>Back To Home</Button></Link>
+				<Link to={'/LabList/'+this.props.match.params.path} style={{textDecoration: 'none'}}><Button color="black" style={buttonStyle}>Back To Home</Button></Link>
 				<Paper elevation={6} style={{position: 'absolute', top: '5%', left: '5%', width: '90vw', height: '90vh'}}>
 					<div id="preview" style={{width: '90vw', height: '90vh'}}>
 					</div>
