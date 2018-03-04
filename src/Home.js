@@ -4,7 +4,10 @@ import LabNames from './LabNames';
 import LabPages from './LabPages';
 import GridList, { GridListTile } from 'material-ui/GridList';
 import List, { ListItem, ListItemText } from 'material-ui/List';
-import Avatar from 'material-ui/Avatar';
+import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
+import Typography from 'material-ui/Typography';
+import Selector from './Selector';
+
 
 const listStyle = {
 	list: {
@@ -16,21 +19,29 @@ export default class Home extends React.Component {
 	render() {
 		return(
 			<div id="labs">
+			<Selector />
 				<div>
-					<List style={listStyle.list}>
-					<Link to="/LabList/iat" style={{textDecoration: 'none'}}>
-						<ListItem button>
-							<Avatar alt="Image" src="blue.png" />
-							<ListItemText primary="IAT" secondary="Implicit Association Test contains images or HTML-formatted content as stimulus." />
-						</ListItem>
-					</Link>
-					<Link to="/LabList/flanker" style={{textDecoration: 'none'}}>
-						<ListItem button>
-							<Avatar alt="Flanker" src="blue.png" />
-							<ListItemText primary="Flanker" secondary="Tests reflex." />
-						</ListItem>
-					</Link>
-					</List>
+					<GridList cellHeight={300} cols={2}>
+					{
+						LabNames.all().map(lab => (
+							<GridListTile>
+								<Card style={{width: '90%', margin: 'auto'}}>
+									<Link to={"/LabList/"+lab.path} style={{textDecoration: 'none'}}>
+										<CardMedia image={lab.imagePath} title={lab.name+"Picuture"} style={{height: '100px'}}/>
+										<CardContent>
+											<Typography variant="headline" compnent="h2">
+											{lab.name}
+											</Typography>
+											<Typography compnent="p">
+											{lab.description}
+											</Typography>
+										</CardContent>
+									</Link>
+								</Card>
+							</GridListTile>
+						))
+					}
+					</GridList>
 				</div>
 				<Route path='/LabList/:path' component={LabPages} />
 			</div>
@@ -47,3 +58,68 @@ export default class Home extends React.Component {
 // 							))
 // 			  			}
 // 			   		</ul>
+
+
+
+
+// <List style={listStyle.list}>
+// 					<Link to="/LabList/iat" style={{textDecoration: 'none'}}>
+// 						<ListItem button>
+// 							<Avatar alt="Image" src="blue.png" />
+// 							<ListItemText primary="IAT" secondary="Implicit Association Test contains images or HTML-formatted content as stimulus." />
+// 						</ListItem>
+// 					</Link>
+// 					<Link to="/LabList/flanker" style={{textDecoration: 'none'}}>
+// 						<ListItem button>
+// 							<Avatar alt="Flanker" src="blue.png" />
+// 							<ListItemText primary="Flanker" secondary="Tests reflex." />
+// 						</ListItem>
+// 					</Link>
+// 					</List>
+
+// <GridListTile>
+// 							<Card style={{width: '90%', margin: 'auto'}}>
+// 								<Link to="/LabList/iat" style={{textDecoration: 'none'}}>
+// 									<CardMedia image="/blue.png" title="iatPicture" style={{height: '100px'}}/>
+// 									<CardContent>
+// 										<Typography variant="headline" component="h2">
+// 										IAT
+// 										</Typography>
+// 										<Typography component="p">
+// 										Two sentences of IAT experiment. 
+// 										</Typography>
+// 									</CardContent>
+// 								</Link>
+// 							</Card>
+// 						</GridListTile>
+// 						<GridListTile>
+// 						<Card style={{width: '90%', margin: 'auto'}}>
+// 							<Link to="/LabList/iat" style={{textDecoration: 'none'}}>
+// 								<CardMedia image="/blue.png" title="iatPicture" style={{height: '50%'}}/>
+// 								<CardContent>
+// 									<Typography variant="headline" component="h2">
+// 									IAT
+// 									</Typography>
+// 									<Typography component="p">
+// 									Two sentences of IAT experiment. 
+// 									</Typography>
+// 								</CardContent>
+// 							</Link>
+// 						</Card>
+// 						</GridListTile>
+// 						<GridListTile>
+// 						<Card style={{width: '90%', margin: 'auto'}}>
+// 							<Link to="/LabList/iat" style={{textDecoration: 'none'}}>
+// 								<CardMedia image="/blue.png" title="iatPicture" style={{height: '50%'}}/>
+// 								<CardContent>
+// 									<Typography variant="headline" component="h2">
+// 									IAT
+// 									</Typography>
+// 									<Typography component="p">
+// 									Two sentences of IAT experiment. 
+// 									</Typography>
+// 								</CardContent>
+// 							</Link>
+// 						</Card>
+// 						</GridListTile>
+// 					</GridList>
