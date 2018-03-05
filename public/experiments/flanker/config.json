@@ -1,0 +1,11 @@
+{
+	"plugins": [
+		"/jsPsych/jspsych.js",
+		"/jsPsych/plugins/jspsych-html-keyboard-response.js",
+		"/jsPsych/plugins/jspsych-image-keyboard-response.js",
+		"/experiments/flanker/flanker.js"
+	],
+	"styling": [
+		"/jsPsych/css/jspsych.css"
+	]
+}

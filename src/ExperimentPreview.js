@@ -13,6 +13,7 @@ const buttonStyle = {
 export default class ExperimentPreview extends React.Component {
 
 	componentWillMount() {
+		console.log(this.props.match.params.path);
 		fetch('/experiments/'+this.props.match.params.path+'/config.json')
 		.then(response => {
 			return response.json();

@@ -21,23 +21,23 @@ export default class Home extends React.Component {
 			<div id="labs">
 			<Selector />
 				<div>
-					<GridList cellHeight={300} cols={2}>
+					<GridList cellHeight={300} cols={3}>
 					{
 						LabNames.all().map(lab => (
 							<GridListTile>
-								<Card style={{width: '90%', margin: 'auto'}}>
-									<Link to={"/LabList/"+lab.path} style={{textDecoration: 'none'}}>
+								<Link to={"/LabList/"+lab.path} style={{textDecoration: 'none'}}>
+									<Card style={{width: '90%', height: '90%', margin: '2.5% auto'}}>
 										<CardMedia image={lab.imagePath} title={lab.name+"Picuture"} style={{height: '100px'}}/>
 										<CardContent>
-											<Typography variant="headline" compnent="h2">
+											<Typography variant="headline" component="h2">
 											{lab.name}
 											</Typography>
-											<Typography compnent="p">
+											<Typography component="p">
 											{lab.description}
 											</Typography>
-										</CardContent>
-									</Link>
-								</Card>
+										</CardContent>	
+									</Card>
+								</Link>
 							</GridListTile>
 						))
 					}

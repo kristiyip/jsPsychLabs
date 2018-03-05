@@ -2,7 +2,9 @@
 	"plugins": [
 		"/jsPsych/jspsych.js",
 		"/jsPsych/plugins/jspsych-html-keyboard-response.js",
-		"/experiments/hello/experiment.js"
+		"/jsPsych/plugins/jspsych-survey-text.js",
+		"/jsPsych/plugins/jspsych-call-function.js",
+		"/experiments/numberMemory/numberMemory.js"
 	],
 	"styling": [
 		"/jsPsych/css/jspsych.css"
