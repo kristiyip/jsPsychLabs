@@ -11,7 +11,7 @@
         var instructions = {
           type: "html-keyboard-response",
           stimulus: "<p>In this task, you will see five arrows on the screen, like the example below.</p>"+
-            "<img src='img/inc1.png'></img>"+
+            "<img src='/jsPsych/examples/img/inc1.png'></img>"+
             "<p>Press the left arrow key if the middle arrow is pointing left. (<)</p>"+
             "<p>Press the right arrow key if the middle arrow is pointing right. (>)</p>"+
             "<p>Press any key to begin.</p>",
@@ -21,19 +21,19 @@
         /*defining stimuli*/
         var test_stimuli = [
           {
-            stimulus: "img/con1.png",
+            stimulus: "/jsPsych/examples/img/con1.png",
             data: { stim_type: 'congruent', direction: 'left'}
           },
           {
-            stimulus: "img/con2.png",
+            stimulus: "/jsPsych/examples/img/con2.png",
             data: { stim_type: 'congruent', direction: 'right'}
           },
           {
-            stimulus: "img/inc1.png",
+            stimulus: "/jsPsych/examples/img/inc1.png",
             data: { stim_type: 'incongruent', direction: 'right'}
           },
           {
-            stimulus: "img/inc2.png",
+            stimulus: "/jsPsych/examples/img/inc2.png",
             data: { stim_type: 'incongruent', direction: 'left'}
           }
         ];

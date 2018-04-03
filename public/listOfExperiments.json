@@ -1,0 +1,7 @@
+{
+	"experiments": [
+		"/experiments/iat",
+		"/experiments/flanker",
+		"/experiments/numberMemory"
+	]
+}
