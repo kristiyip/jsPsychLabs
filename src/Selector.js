@@ -3,30 +3,36 @@ import Select from 'material-ui/Select';
 import Input, { InputLabel } from 'material-ui/Input';
 import { MenuItem } from 'material-ui/Menu';
 import LabNames from './LabNames';
+import RenderCards from './RenderCards';
 
 export default class Selector extends React.Component {
-	state = {
-		task: 'all'
-	};
+	constructor(props) {
+		super(props);
+		this.state = {
+			selectorTask: 'all'
+		}
+	}
 
-	handleChange = (event) => {
+	handleChange = event => {
 		this.setState({
-			task: event.target.value
+			selectorTask: event.target.value
 		});
 	}
 
 	render() {
+		console.log(this.state.selectorTask);
 		return(
 			<div>
 				<Select
-					style={{width: '50%'}}
-					value={this.state.task}
+					value={this.state.selectorTask}
 					onChange={this.handleChange}
-					inputProps={{name: 'task', id: 'selectTask'}}
+					inputProps={{name: 'selectorTask', id: 'selectorTask-simple'}}
+					style={{width: '50%'}}
 				> 
 					<MenuItem value="all">All</MenuItem>
 					<MenuItem value="reflex">Reflex</MenuItem>
 				</Select>
+				<RenderCards task={this.state.selectorTask} />
 			</div>
 		)
 	}

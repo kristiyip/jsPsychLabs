@@ -12,6 +12,10 @@ import Button from 'material-ui/Button';
 import { SupervisorAccount, AccessTime } from 'material-ui-icons';
 
 
+import Select from 'material-ui/Select';
+import Input, { InputLabel } from 'material-ui/Input';
+import { MenuItem } from 'material-ui/Menu';
+
 const listStyle = {
 	list: {
 		width: '100%'
@@ -19,52 +23,86 @@ const listStyle = {
 }
 
 export default class Home extends React.Component {
+	state = {
+		task: 'all',
+		names: '',
+		times: '',
+		types: '',
+		descriptions: ''
+	};
+
+	handleChange = (event) => {
+		this.setState({
+			task: event.target.value
+		});
+	}
+
+	componentWillMount() {
+
+		fetch('/listOfExperiments.json')
+		.then(response => {
+			return response.json();
+		})
+		.then(jsonFile => {
+			for(var i=0; i<jsonFile.experiments.length; i++) {
+				var pathToGet = jsonFile.experiments[i] + "/config.json";
+				fetch(pathToGet)
+				.then(responseTwo => {
+					return responseTwo.json();
+				})
+				.then(jsonTwo => {
+					console.log(jsonTwo);
+				})
+			}
+		});
+	}
+
 	render() {
+		console.log(this.props.task);
 		return(
 			<div id="labs">
-			<Selector />
 				<div>
 					<GridList cellHeight={375} cols={3}>
 					{
 						LabNames.all().map(lab => (
 							<GridListTile>
-									<Card style={{width: '90%', height: '90%', margin: '2.5% auto'}}>
-										<CardMedia image={lab.imagePath} title={lab.name+"Picuture"} style={{height: '125px'}}/>
-										<CardContent>
-											<Typography variant="headline" component="h2" style={{fontWeight: '20px', fontSize: '25px', textAlign: 'left'}}>
-											{lab.name}
-											</Typography>
-											<div style={{width: '32%'}}>
-											<IconButton>
-												<div style={{display: 'flex', padding: '0px 20px 0px 0px'}}>
+								<Card style={{width: '90%', height: '90%', margin: '2.5% auto'}}>
+									<CardMedia image={lab.imagePath} title={lab.name+"Picuture"} style={{height: '125px'}}/>
+									<CardContent>
+										<Typography variant="headline" component="h2" style={{fontWeight: '20px', fontSize: '25px', textAlign: 'left'}}>
+										{lab.name}
+										</Typography>
+										<div style={{width: '32%'}}>
+										<IconButton>
+											<div style={{display: 'flex', padding: '0px 20px 0px 0px'}}>
 												<SupervisorAccount />
 												<Typography component="p">230</Typography>
-												</div>
-											</IconButton>
-											<IconButton>
-												<div style={{display: 'flex'}}>
+											</div>
+										</IconButton>
+										<IconButton>
+											<div style={{display: 'flex'}}>
 												<AccessTime />
 												<Typography component="p">{lab.time}</Typography>
-												</div>
-											</IconButton>
 											</div>
-											<Typography component="p" style={{textAlign: "left"}}>
+										</IconButton>
+										</div>
+										<Typography component="p" style={{textAlign: "left"}}>
 											{lab.description}
-											</Typography>
-										</CardContent>	
-										<CardActions style={{position: 'absolute', left: '20px', bottom: '20px'}}>
+										</Typography>
+									</CardContent>	
+									<CardActions style={{position: 'absolute', left: '20px', bottom: '20px'}}>
 										<Link to={"/LabList/"+lab.path} style={{textDecoration: 'none'}}>
-										<Button size="small">
-										Learn More
-										</Button>
+											<Button size="small">
+											Learn More
+											</Button>
 										</Link>
 										<Link to={"/LabList/"+lab.path+"/"+"start"} style={{textDecoration: 'none'}}>
-										<Button size="small">
-										Begin Experiment
-										</Button>
+											<Button size="small">
+											Begin Experiment
+											</Button>
 										</Link>
-										</CardActions>
-									</Card>
+									</CardActions>
+								</Card>
 							</GridListTile>
 						))
 					}

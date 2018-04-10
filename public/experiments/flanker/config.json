@@ -7,5 +7,23 @@
 	],
 	"styling": [
 		"/jsPsych/css/jspsych.css"
+	],
+	"path" : [
+		"flanker"
+	],
+	"name": [
+		"Flanker"
+	],
+	"type": [
+		"reflex"
+	],
+	"imagePath": [
+		"/blue.png"
+	],
+	"time": [
+		"5min"
+	],
+	"description": [
+		"A simple reflex test where you have 5 characters, all of which are the same or one is different."
 	]
 }

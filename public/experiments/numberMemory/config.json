@@ -8,5 +8,23 @@
 	],
 	"styling": [
 		"/jsPsych/css/jspsych.css"
+	],
+	"path" : [
+		"numberMemory"
+	],
+	"name": [
+		"Number Memory"
+	],
+	"type": [
+		"reflex"
+	],
+	"imagePath": [
+		"/blue.png"
+	],
+	"time": [
+		"10min"
+	],
+	"description": [
+		"Memorize a sequence of numbers that increase by one with every test passed and decreases by one with every test failed."
 	]
 }

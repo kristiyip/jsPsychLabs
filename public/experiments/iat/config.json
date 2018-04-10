@@ -8,5 +8,23 @@
 	],
 	"styling": [
 		"/jsPsych/css/jspsych.css"
+	],
+	"path" : [
+		"iat"
+	],
+	"name": [
+		"IAT"
+	],
+	"type": [
+		"association"
+	],
+	"imagePath": [
+		"/blue.png"
+	],
+	"time": [
+		"15min"
+	],
+	"description": [
+		"A simple implicit association test. Tests the strength of a person's automatic association between concepts and evaluations or stereotypes."
 	]
 }
