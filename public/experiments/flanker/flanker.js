@@ -63,6 +63,46 @@
           sample: {type: 'fixed-repetitions', size: reps_per_trial_type}
         };
 
+        var save_data = {
+          type: 'call-function', // don't forget to add call-function plugin!
+          func: function(){
+            console.log(window.location.search.substr(1).split('&'));
+            var classID = jsPsych.data.getURLVariable('classID');
+            console.log(classID);
+            var data = jsPsych.data.get().values();
+            var json_data = JSON.parse(jsPsych.data.get().json());
+            var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+
+            // $.ajax({
+            //   type:'GET',
+            //   url: '/savedata',
+            //   success: function(data) {
+            //     document.getElementById('preview').innerHTML = jsPsych.data.get().json();
+            //     console.log(typeof jsPsych.data.get().json());
+            //     console.log(document.getElementById('preview').innerHTML);
+            //   }
+            // });
+
+            xmlhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("preview").innerHTML =
+                this.responseText;
+              }
+            };
+            xmlhttp.open("POST", "../saveData"); // probably need a special express handler like /save?
+            xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xmlhttp.send(JSON.stringify(json_data));
+
+            // code to submit json_data or data to database.
+            // probably using an ajax-style request (XMLHttpRequest)
+            // search for how to post data to MongoDB from JavaScript
+
+            // use URL variables to track "classroom ID"
+            // see jsPsych docs for URL variables in jsPsych.data.getURLvariable ??
+
+          }
+        }
+
         /*defining debriefing block*/
         var debrief = {
           type: "html-keyboard-response",
@@ -83,7 +123,9 @@
         timeline.push(welcome);
         timeline.push(instructions);
         timeline.push(test);
-        timeline.push(debrief);
+        timeline.push(save_data);
+        // push save data trial when you have it working.
+        //timeline.push(debrief);
 
         /*start experiment*/
         jsPsych.init({

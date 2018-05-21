@@ -30,6 +30,54 @@ export default class RenderCards extends React.Component {
 		};
 	}
 
+	componentWillMount() {
+		var tempNames = [];
+		var tempTimes = [];
+		var tempDescriptions = [];
+		var tempPaths = [];
+		var tempImagePaths = [];
+		var tempList = [];
+
+		fetch('/listOfExperiments.json')
+			.then(response => {
+				return response.json();
+			})
+			.then(jsonFile => {
+				var tempNumber = [];
+				for(var i=0; i<jsonFile.experiments.length; i++) {
+					tempNumber.push(jsonFile.experiments[i] + "/config.json");
+				}
+				return tempNumber;
+			}).then(list => {
+
+				Promise.all(
+					list.map(element => {
+						fetch(element)
+						.then(responseTwo => {
+							return responseTwo.json();
+						})
+						.then(jsonTwo => {
+					
+							tempNames.push(jsonTwo.name);
+							tempTimes.push(jsonTwo.time);
+							tempPaths.push(jsonTwo.path);
+							tempImagePaths.push(jsonTwo.imagePath);
+							tempDescriptions.push(jsonTwo.description);
+
+							this.setState({
+								renderTask: 'all',
+								names: tempNames,
+								times: tempTimes,
+								paths: tempPaths,
+								imagePaths: tempImagePaths,
+								descriptions: tempDescriptions
+							})
+						})
+					})
+				)
+			})
+	}
+
 
 	componentWillReceiveProps(nextProps) {
 		console.log("in componentWillReceiveProps");
